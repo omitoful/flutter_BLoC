@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_app/pages/sign_in/sign_in.dart';
 import 'package:flutter_bloc_app/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:flutter_bloc_app/pages/welcome/welcome.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,8 +19,14 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(elevation: 0, backgroundColor: Colors.white),
+          ),
           home: Welcome(),
-          // routes: {"myHomePage": (context) => MyHomePage()},
+          routes: {
+            // "myHomePage": (context) => MyHomePage(),
+            "signIn": (context) => SignIn(),
+          },
         ),
       ),
     );

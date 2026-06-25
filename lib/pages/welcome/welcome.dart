@@ -133,9 +133,7 @@ class _WelcomeState extends State<Welcome> {
                 curve: Curves.decelerate,
               );
             } else {
-              Navigator.of(
-                context,
-              ).pushNamedAndRemoveUntil("myHomePage", (route) => false);
+              Navigator.of(context).pushNamedAndRemoveUntil("signIn", (route) => false);
             }
           },
           child: Container(
