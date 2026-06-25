@@ -1,4 +1,6 @@
-# Miscellaneous
+# =========================================================================
+# Miscellaneous & System Files
+# =========================================================================
 *.class
 *.log
 *.pyc
@@ -11,19 +13,28 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+*.mode1v3
+*.mode2v3
+*.storyboardc
+*~
+# Crashlytics 相關產物
+dart_crash_report_*.json
 
-# IntelliJ related
+# =========================================================================
+# IDEs & Editors (Android Studio, IntelliJ, VS Code)
+# =========================================================================
+# IntelliJ / Android Studio related
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# VS Code related
+.vscode/
 
-# Flutter/Dart/Pub related
+# =========================================================================
+# Flutter / Dart / Pub Toolchain
+# =========================================================================
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
@@ -33,13 +44,53 @@ migrate_working_dir/
 /build/
 /coverage/
 
-# Symbolication related
+# Symbolication & Obfuscation related
 app.*.symbols
-
-# Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
+# =========================================================================
+# Android Native Build Artifacts & Local Configurations
+# =========================================================================
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/.gradle/
+/android/local.properties
+/android/app/src/main/res/generated/
+
+# 簽章金鑰檔案 (保護你的 Release 金鑰)
+*.keystore
+*.jks
+
+# =========================================================================
+# iOS Native Build Artifacts & CocoaPods
+# =========================================================================
+**/ios/.generated/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Podfile.lock
+
+# =========================================================================
+# Firebase & Secrets / Environment Variables (安全性關鍵)
+# =========================================================================
+# 未來若有整合 Firebase，強烈建議不要將金鑰進版控
+**/ios/Runner/GoogleService-Info.plist
+**/android/app/google-services.json
+
+# 環境變數設定檔
+.env
+.env.*
+
+# =========================================================================
+# Other Platforms (預留跨平台彈性：Desktop & Web)
+# =========================================================================
+/windows/flutter/ephemeral/
+/linux/flutter/ephemeral/
+/macos/Flutter/ephemeral/
+.web/
+
+# =========================================================================
+# Flutter Version Manager (FVM) - 選用
+# =========================================================================
+# 如果未來有使用 FVM 控制專案的 Flutter 版本，可啟用此行
+# .fvm/
