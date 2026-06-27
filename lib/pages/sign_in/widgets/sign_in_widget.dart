@@ -47,7 +47,12 @@ Widget reusableText(String text) {
   );
 }
 
-Widget buildTextField(String hintText, String icon, String textType) {
+Widget buildTextField(
+  String hintText,
+  String icon,
+  String textType,
+  void Function(String)? onChanged,
+) {
   return Container(
     margin: EdgeInsets.only(bottom: 10.h),
     child: Container(
@@ -71,6 +76,7 @@ Widget buildTextField(String hintText, String icon, String textType) {
             width: 270.w,
             height: 50.h,
             child: TextField(
+              onChanged: onChanged,
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                 hintText: hintText,
