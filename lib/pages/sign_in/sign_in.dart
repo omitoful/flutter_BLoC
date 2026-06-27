@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_app/pages/common_widgets.dart';
 import 'package:flutter_bloc_app/pages/sign_in/bloc/sign_in_bloc.dart';
 import 'package:flutter_bloc_app/pages/sign_in/bloc/sign_in_event.dart';
 import 'package:flutter_bloc_app/pages/sign_in/bloc/sign_in_state.dart';
@@ -26,7 +27,7 @@ class _SignInState extends State<SignIn> {
           child: SafeArea(
             child: Scaffold(
               backgroundColor: Colors.white,
-              appBar: buildAppBar(),
+              appBar: buildAppBar("Log In"),
               body: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -60,7 +61,9 @@ class _SignInState extends State<SignIn> {
                       controller.handleSignIn("login");
                     }),
                     SizedBox(height: 20.h),
-                    buildButton("Register", "register", () {}),
+                    buildButton("Register", "register", () {
+                      Navigator.of(context).pushNamed("register");
+                    }),
                   ],
                 ),
               ),
