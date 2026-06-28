@@ -62,7 +62,7 @@ class _SignInState extends State<SignIn> {
                     }),
                     SizedBox(height: 20.h),
                     buildButton("Register", "register", () {
-                      Navigator.of(context).pushNamed("register");
+                      Navigator.of(context).pushNamed("/register");
                     }),
                   ],
                 ),
