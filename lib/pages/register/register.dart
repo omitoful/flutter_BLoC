@@ -4,6 +4,7 @@ import 'package:flutter_bloc_app/pages/common_widgets.dart';
 import 'package:flutter_bloc_app/pages/register/bloc/register_bloc.dart';
 import 'package:flutter_bloc_app/pages/register/bloc/register_event.dart';
 import 'package:flutter_bloc_app/pages/register/bloc/register_state.dart';
+import 'package:flutter_bloc_app/pages/register/register_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Register extends StatefulWidget {
@@ -65,7 +66,9 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(height: 15.sp),
-                    buildButton("Sign Up", "signUp", () {}),
+                    buildButton("Sign Up", "signUp", () {
+                      RegisterController(context: context).handleEmailRegister();
+                    }),
                   ],
                 ),
               ),
