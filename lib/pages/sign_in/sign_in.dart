@@ -57,6 +57,7 @@ class _SignInState extends State<SignIn> {
                         ],
                       ),
                     ),
+                    SizedBox(height: 50.h),
                     buildButton("Log In", "login", () {
                       controller.handleSignIn("login");
                     }),
