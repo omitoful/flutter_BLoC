@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_app/common/constant.dart';
+import 'package:flutter_bloc_app/common/global.dart';
 import 'package:flutter_bloc_app/common/toast.dart';
 import 'package:flutter_bloc_app/pages/sign_in/bloc/sign_in_bloc.dart';
 
@@ -43,13 +45,12 @@ class SignInController {
           if (user == null) {
             toastInfo(msg: "您不屬於此app的使用者");
             return;
-          } else if (!user.emailVerified) {
-            toastInfo(msg: "尚未驗證");
-            Navigator.of(
-              context,
-            ).pushNamedAndRemoveUntil("/application", (route) => false);
           } else {
-            toastInfo(msg: "登入成功！");
+            toastInfo(msg: (!user.emailVerified) ? "尚未驗證" : "登入成功！");
+            Global.storageService.setString(
+              AppConstant.STORAGE_USER_TOKEN_KEY,
+              "12345678",
+            );
             Navigator.of(
               context,
             ).pushNamedAndRemoveUntil("/application", (route) => false);
