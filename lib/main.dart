@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_app/common/routes/routes.dart';
+import 'package:flutter_bloc_app/pages/application/application_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             appBarTheme: AppBarTheme(elevation: 0, backgroundColor: Colors.white),
           ),
           onGenerateRoute: AppPages.GenerateRouteSettings,
-          // home: ApplicationPage(),
+          home: ApplicationPage(),
           // routes: {
           //   // "myHomePage": (context) => MyHomePage(),
           //   "signIn": (context) => SignIn(),
@@ -35,22 +36,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
-
-class AppBlocs extends Bloc<AppEvents, AppStates> {
-  AppBlocs() : super(const AppInitialState()) {}
-}
-
-@immutable
-abstract class AppStates {
-  const AppStates();
-}
-
-class AppInitialState extends AppStates {
-  const AppInitialState();
-}
-
-@immutable
-abstract class AppEvents {
-  const AppEvents();
 }

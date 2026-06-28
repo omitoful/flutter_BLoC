@@ -45,10 +45,14 @@ class SignInController {
             return;
           } else if (!user.emailVerified) {
             toastInfo(msg: "尚未驗證");
-            return;
+            Navigator.of(
+              context,
+            ).pushNamedAndRemoveUntil("/application", (route) => false);
           } else {
             toastInfo(msg: "登入成功！");
-            return;
+            Navigator.of(
+              context,
+            ).pushNamedAndRemoveUntil("/application", (route) => false);
           }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'invalid-credential') {

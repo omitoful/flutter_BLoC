@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_app/common/routes/names.dart';
 import 'package:flutter_bloc_app/pages/application/application_page.dart';
+import 'package:flutter_bloc_app/pages/application/bloc/app_bloc.dart';
 import 'package:flutter_bloc_app/pages/register/bloc/register_bloc.dart';
 import 'package:flutter_bloc_app/pages/register/register.dart';
 import 'package:flutter_bloc_app/pages/sign_in/bloc/sign_in_bloc.dart';
@@ -27,7 +28,11 @@ class AppPages {
         page: Register(),
         bloc: BlocProvider(create: (_) => RegisterBloc()),
       ),
-      PageEntity(route: AppRoutes.APPLICATION, page: ApplicationPage(), bloc: null),
+      PageEntity(
+        route: AppRoutes.APPLICATION,
+        page: ApplicationPage(),
+        bloc: BlocProvider(create: (_) => AppBloc()),
+      ),
     ];
   }
 
