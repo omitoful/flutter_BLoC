@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc_app/pages/home/home_page.dart';
+import 'package:flutter_bloc_app/pages/profile/profile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/colors.dart';
@@ -10,7 +11,7 @@ Widget buildPage(int index) {
     Center(child: Text("Search")),
     Center(child: Text("Course")),
     Center(child: Text("Chat")),
-    Center(child: Text("Profile")),
+    Profile(),
   ];
   return _widgets[index];
 }
