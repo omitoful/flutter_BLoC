@@ -138,3 +138,14 @@ Widget buildButton(String text, String type, VoidCallback? onTap) {
     ),
   );
 }
+
+Widget reusableTitleText(String text) {
+  return Text(
+    text,
+    style: TextStyle(
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.bold,
+      fontSize: 16.sp,
+    ),
+  );
+}

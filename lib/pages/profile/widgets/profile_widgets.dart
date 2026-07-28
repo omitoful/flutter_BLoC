@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_app/common/colors.dart';
 import 'package:flutter_bloc_app/common/routes/names.dart';
+import 'package:flutter_bloc_app/pages/common_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 AppBar buildProfileAppBar() {
@@ -16,14 +17,7 @@ AppBar buildProfileAppBar() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(width: 30.w, height: 30.h, child: Image.asset("assets/elephant.png")),
-          Text(
-            "Profile",
-            style: TextStyle(
-              color: AppColors.primaryText,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp,
-            ),
-          ),
+          reusableTitleText("Profile"),
           GestureDetector(
             child: Container(
               width: 25.w,
@@ -89,14 +83,7 @@ Widget buildProfileListView(BuildContext context) {
                   child: Image.asset("assets/${imagesInfo.values.elementAt(index)}"),
                 ),
                 SizedBox(width: 15.w),
-                Text(
-                  imagesInfo.keys.elementAt(index),
-                  style: TextStyle(
-                    color: AppColors.primaryText,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.sp,
-                  ),
-                ),
+                reusableTitleText(imagesInfo.keys.elementAt(index)),
               ],
             ),
           ),
